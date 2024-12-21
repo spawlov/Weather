@@ -1,14 +1,15 @@
-import urllib.parse
-
 import requests
 
 
 def get_weather_report(place: str) -> str:
-    template_url = f"https://wttr.in/{place}?nTqM&lang=ru"
-    encoded_place = urllib.parse.quote(place)
-    url = template_url.replace("{place}", encoded_place)
+    url = f"https://wttr.in/{place}"
+    payload = {
+        "nTqM": "",
+        "lang": "ru",
+    }
     response = requests.get(
         url=url,
+        params=payload,
         timeout=30,
     )
     response.raise_for_status()
