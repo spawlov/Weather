@@ -1,0 +1,2 @@
+requests>=2.32
+mypy>=1.14
