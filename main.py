@@ -4,7 +4,7 @@ import requests
 
 
 def get_weather_report(place: str) -> str:
-    template_url = f"https://wttr.in/{place}?nTqu&lang=ru"
+    template_url = f"https://wttr.in/{place}?nTqM&lang=ru"
     encoded_place = urllib.parse.quote(place)
     url = template_url.replace("{place}", encoded_place)
     response = requests.get(
@@ -21,4 +21,4 @@ def main(places: list[str]) -> None:
 
 
 if __name__ == "__main__":
-    main(["Москва", "Шереметьево", "Череповец"])
+    main(["Лондон", "Шереметьево", "Череповец"])
